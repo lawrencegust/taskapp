@@ -1,0 +1,8 @@
+<center>
+	<h1>Login</h1>	
+		<%= form_tag '/sessions', :method => 'post' do %>
+			<%= label_tag :email, 'Email Address' %><%= text_field_tag :email%>
+			<%= label_tag :password, 'Password' %><%= password_field_tag :password%></br>
+			<%= submit_tag 'Login', class: 'btn btn-primary' %>
+		<% end %>
+		</center>
