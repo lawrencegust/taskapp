@@ -1,0 +1,16 @@
+<div class='row-fluid'>
+	<div class='span4'>
+
+	</div>
+	<div class='span4 well'><center>
+		<h2>Add a new task</h2>
+		<%= form_for @task do |f| %>
+			<%= f.text_field :title, placeholder: 'task name' %>
+			<%= f.text_area :description, placeholder: 'task description', rows: '5' %></br>
+			<%= f.submit 'Create task', class: 'btn btn-primary' %>
+		<% end %>
+	</center></div>
+	<div class='span4'>
+
+	</div>
+</div>

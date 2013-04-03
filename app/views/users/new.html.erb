@@ -1,0 +1,16 @@
+<div class='row-fluid'>
+	<div class='span12 well'>
+		<center><h2>Start here.</h2>
+		<%= form_for @user do |f| %>
+
+			<%= f.text_field :first_name, placeholder: 'first name' %>
+			<%= f.text_field :last_name, placeholder: 'last name' %>
+			<%= f.email_field :email, placeholder: 'email address' %>
+			<%= f.password_field :password, placeholder: 'password' %>
+			<p><b>Are you part of a company or group?</b></p>
+			<%= f.text_field :company, placeholder: 'type company here' %></br>
+			<%= f.submit 'Join', class: 'btn btn-primary' %>
+
+		<% end %></center>
+	</div>
+</div>
