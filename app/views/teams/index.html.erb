@@ -1,2 +1,11 @@
-<h1>Teams#index</h1>
-<p>Find me in app/views/teams/index.html.erb</p>
+<h1>Join a team</h1>
+<table class='table table-striped table-hover'>
+	<th>Team Name</th><th>Team Owner</th><th># of Members</th><th></th>
+	<tbody>
+		<% @teams.each do |team| %>
+			<tr>
+				<td><%= team.name %></td><td><%= "#{team.user.first_name} #{team.user.last_name}" %></td><td><%= team.users.count + 1 %></td><td><%= link_to 'Join', class: 'btn btn-info' %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

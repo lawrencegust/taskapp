@@ -49,9 +49,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(session[:id])
     @tasks = Task.where(:user_id => @user.id)
-    @teams = @user.teams
+    @teams = Team.where(:user_id => @user.id).all
+    @projects = @user.projects
 
   end
 end

@@ -3,7 +3,9 @@ class User < ActiveRecord::Base
 
   has_secure_password
   has_many :rosters
+  has_many :teams
   has_many :teams, :through => :rosters
-  has_many :tasks
+  has_many :projects, :through => :teams
+  has_many :tasks, :through => :projects
 
 end

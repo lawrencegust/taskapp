@@ -12,9 +12,13 @@
 	  <div class="navbar-inner">
 	    <a class="brand" href="#">Title</a>
 	    <ul class="nav">
-	      <li class="active"><a href="#">Home</a></li>
+	      <li class="active"><%= link_to "Home", user_url(User.find(session[:id])) %></li>
 	      <li><a href="#">Link</a></li>
-	      <li><a href="#">Link</a></li>
+	      <% if session[:id].present? %>
+	      <li><%= link_to "Logout", '/sessions', method: 'delete' %></li>
+	      <% else %>
+	      <li><%= link_to "Login", '/sessions', method: 'post' %></li>
+	      <% end %>
 	    </ul>
 	  </div>
 	</div>
